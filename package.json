@@ -1,0 +1,28 @@
+{
+  "name": "nodejs-gallery",
+  "version": "1.0.0",
+  "description": "gallery",
+  "main": "index.ts",
+  "scripts": {
+    "start": "nodemon ./src/index.js",
+    "test": "jest --projects ./tests --runInBand"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrunoSGomes/nodejs-gallery.git"
+  },
+  "author": "BrunoSGomes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrunoSGomes/nodejs-gallery/issues"
+  },
+  "homepage": "https://github.com/BrunoSGomes/nodejs-gallery#readme",
+  "dependencies": {
+    "ajv": "^8.9.0",
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "jest": "^27.4.7",
+    "nodemon": "^2.0.15"
+  }
+}
