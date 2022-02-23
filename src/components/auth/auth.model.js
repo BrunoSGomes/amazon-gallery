@@ -1,4 +1,4 @@
-export default class Auth {
+export class Auth {
     constructor() { }
 
     async login() {

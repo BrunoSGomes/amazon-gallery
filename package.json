@@ -5,7 +5,10 @@
   "main": "index.ts",
   "scripts": {
     "start": "nodemon ./src/index.js",
-    "test": "jest --projects ./tests --runInBand"
+    "test:integration": "jest --projects ./tests --runInBand",
+    "test:integration:watch": "jest --projects ./tests --runInBand --watchAll",
+    "test:unit": "jest",
+    "test:unit:watch": "jest --watchAll"
   },
   "repository": {
     "type": "git",
@@ -19,6 +22,7 @@
   "homepage": "https://github.com/BrunoSGomes/nodejs-gallery#readme",
   "dependencies": {
     "ajv": "^8.9.0",
+    "aws-sdk": "^2.1075.0",
     "express": "^4.17.2"
   },
   "devDependencies": {

@@ -1,4 +1,4 @@
-import Gallery from "../models/gallery.model";
+import { Gallery } from "../models/gallery.model";
 
 app.post('/uploadFile', (req, res) => {
     const result = Gallery.uploadFile()
