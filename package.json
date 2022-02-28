@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "gallery",
   "main": "index.ts",
+  "type": "module",
   "scripts": {
     "start": "nodemon ./src/index.js",
     "test:integration": "jest --projects ./tests --runInBand",
@@ -22,8 +23,9 @@
   "homepage": "https://github.com/BrunoSGomes/nodejs-gallery#readme",
   "dependencies": {
     "ajv": "^8.9.0",
-    "aws-sdk": "^2.1075.0",
-    "express": "^4.17.2"
+    "aws-sdk": "^2.1082.0",
+    "express": "^4.17.2",
+    "serverless-http": "^2.7.0"
   },
   "devDependencies": {
     "jest": "^27.4.7",

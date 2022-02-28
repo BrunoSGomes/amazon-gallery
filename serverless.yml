@@ -1,0 +1,25 @@
+service: gallery
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: dev
+  region: sa-east-1
+  memorySize: 128
+
+package:
+  excludeDevDependencies: true
+
+functions:
+  app:
+    handler: src/index.handler
+    events:
+
+      - http:
+          path: /
+          method: ANY
+          cors: true
+          
+      - http:
+          path: /{proxy+}
+          method: ANY
+          cors: true
