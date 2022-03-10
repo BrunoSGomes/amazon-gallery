@@ -1,0 +1,40 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - releases/*
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
+      - name: Install node v14.19.0
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: '14.19.0'
+
+      - name: Install package.json dependencies
+        run: |
+          npm i
+
+      - name: Run tests
+        run: |
+          npm run test:integration
+          npm run test:unit
+
+      - name: Install Serverless CLI
+        run: |
+          npm install -g serverless
+
+      - name: Configure Serverless AWS profile
+        run: |
+          serverless config credentials --provider aws --key ${{ secrets.AWS_KEY }} --secret ${{ secrets.AWS_SECRET }} -o
+
+      - name: Deploy to AWS Lambda
+        run: |
+          sls deploy
