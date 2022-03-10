@@ -1,9 +1,9 @@
-name: Run tests before accept pull request 
+name: Deploy
 
 on:
-  pull_request:
+  push:
     branches:
-      - master
+      - releases/*
 
 jobs:
   run-tests:
@@ -26,3 +26,15 @@ jobs:
         run: |
           npm run test:integration
           npm run test:unit
+
+      - name: Install Serverless CLI
+        run: |
+          npm install -g serverless
+
+      - name: Configure Serverless AWS profile
+        run: |
+          serverless config credentials --provider aws --key ${{ secrets.AWS_KEY }} --secret ${{ secrets.AWS_SECRET }} -o
+
+      - name: Deploy to AWS Lambda
+        run: |
+          sls deploy
