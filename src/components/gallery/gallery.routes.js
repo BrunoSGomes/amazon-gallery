@@ -1,23 +1,26 @@
 import express from 'express'
+import { GalleryController } from './gallery.controller'
+
+const galleryController = new GalleryController()
 
 const routes = express.Router({
     mergeParams: true
 })
 
-routes.post('/uploadFile', (req, res) => {
-    res.status(200).json({})
+routes.post('/uploadFile', async (req, res) => {
+    await galleryController.uploadFile(req, res)
 })
 
-routes.post('/deleteFile', (req, res) => {
-    res.status(200).json({})
+routes.post('/deleteFile', async (req, res) => {
+    await galleryController.deleteFile(req, res)
 })
 
-routes.get('/getFile', (req, res) => {
-    res.status(200).json({})
+routes.get('/getFile', async (req, res) => {
+    await galleryController.getFiles(req, res)
 })
 
-routes.get('/getFile/:id', (req, res) => {
-    res.status(200).json({})
+routes.get('/getFile/:id', async (req, res) => {
+    await galleryController.getUniqFile(req, res)
 })
 
 export { routes as galleryRoutes }
