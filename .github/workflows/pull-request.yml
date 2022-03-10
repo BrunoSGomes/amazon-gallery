@@ -24,4 +24,5 @@ jobs:
 
       - name: Run tests
         run: |
-          npm run tsc
+          npm run test:integration
+          npm run test:unit
