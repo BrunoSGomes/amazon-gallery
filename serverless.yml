@@ -1,10 +1,13 @@
 service: gallery
+
 provider:
   name: aws
   runtime: nodejs14.x
   stage: dev
   region: sa-east-1
-  memorySize: 128
+
+plugins:
+  - serverless-offline
 
 package:
   excludeDevDependencies: true

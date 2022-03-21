@@ -1,15 +1,19 @@
 {
-  "name": "nodejs-gallery",
+  "name": "amazon-gallery",
   "version": "1.0.0",
-  "description": "gallery",
+  "description": "amazon gallery",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon ./src/index.js",
+    "start": "sls invoke local --function app",
+    "start:watch": "sls invoke local --function app",
     "test:integration": "jest --projects ./tests --runInBand",
     "test:integration:watch": "jest --projects ./tests --runInBand --watchAll",
     "test:unit": "jest",
     "test:unit:watch": "jest --watchAll"
+  },
+  "engines": {
+    "node": "14"
   },
   "repository": {
     "type": "git",
@@ -29,6 +33,6 @@
   },
   "devDependencies": {
     "jest": "^27.4.7",
-    "nodemon": "^2.0.15"
+    "serverless-offline": "^8.5.0"
   }
 }

@@ -1,6 +1,6 @@
-const { resolve } = require('path');
+import { resolve } from 'path'
 const root = resolve(__dirname, '..');
-const rootConfig = require(`${root}/jest.config.js`);
+import rootConfig from `${root}/jest.config.mjs`
 
 module.exports = {
     ...rootConfig, ...{
