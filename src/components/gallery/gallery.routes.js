@@ -1,5 +1,5 @@
 import express from 'express'
-import { GalleryController } from './gallery.controller'
+import { GalleryController } from './gallery.controller.js'
 
 const galleryController = new GalleryController()
 

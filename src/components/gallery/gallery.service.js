@@ -1,8 +1,10 @@
-export class GalleryModel {
+import { S3 } from 'aws-sdk'
 
+export class GalleryService {
     constructor() { }
 
     async uploadFile() {
+
     }
 
     async deleteFile() {
